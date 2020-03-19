@@ -4,23 +4,6 @@ const companies = createAll();
 cleanConsole(1, companies);
 console.log('---- EXAMPLE 1 --- ', 'Put here your function');
 
-// Create a function which takes the variable "companies" as a parameter,
-// and which replaces all 'undefined' values in users with an empty string
-// and which capitalizes all the companies names and all the lastName and users' fisrtName
-// and which classifies the companies by number of users (from largest to smallest)
-// and which classifies the users of each company according to the lastName attribute
-// (in alphabetical order)
-
-
-// Créer une fonction qui qui prend en paramètre la variable "companies",
-// et qui remplace toutes les 'undefined' dans les users par un string vide
-// et qui mets une majuscule à toutes les companies et à tous les lastName et
-// fisrtName des users
-// et qui classe les companies par nombre d'user (du plus grand au plus petit)
-// et qui classe les users de chaque companie en fonction de l'attribut lastName
-// (par ordre alphabétique)
-
-
 // Créer une fonction prenant en paramètre la variable "companies" et remplaçant
 // toutes les valeurs "undefined" dans les "users" par un string vide.
 // Le nom de chaque "companies" doit avoir une majuscule au début ainsi que
