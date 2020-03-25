@@ -10,16 +10,16 @@ console.log('---- EXAMPLE 6 --- ', 'Put here your function');
 
 // Cree una función tomando la variable "companies" como parámetro y devolviendo
 // un nuevo objeto cuyos atributos son la concatenación del apelido, nombre y
-// la edad de cada "user". Cada atributo debe tener el valor de boolean
-// "car". Ver ejemplo a continuación.
+// edad de cada "user". Cada atributo debe tener el valor de boolean "car".
+// Ver ejemplo a continuación.
 
 // -----------------------------------------------------------------------------
 // INSTRUCTIONS IN ENGLISH
 
 // Create a function taking the "companies" variable as a parameter and returning
 // a new object whose attributes are the concatenation of the name, first name and
-// the age of each user. Each attribute must have the value of boolean
-// "car". See example below.
+// the age of each user. Each attribute must have the value of boolean "car".
+// See example below.
 
 // -----------------------------------------------------------------------------
 // INSTRUCTIONS EN FRANÇAIS

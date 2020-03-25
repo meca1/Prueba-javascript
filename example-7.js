@@ -20,15 +20,15 @@ console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function');
 // devolviendo el nombre de esta "company".
 
 // Parte 2: Crear una función tomando como parámetro un "id" de "company" y
-// eliminando la "company" de la lista.
+// quitando la "company" de la lista.
 
 // Parte 3: Crear una función tomando como parámetro un "id" de "company" y
-// permitiendo hacer un PATCH (como con una llamada HTTP) en todos
+// permitiendo hacer un PATCH (como con una llamada HTTP) en todos los
 // atributos de esta "company" excepto en el atributo "users".
 
 // Parte 4: Crear una función tomando como parámetro un "id" de "company" y un
-// nuevo "user" cuyo nombre es "Delgado", el primer nombre "Juan", de 35 años y
-// un auto. El nuevo "user" debe agregarse a la lista de "users" de este
+// nuevo "user" cuyo el apelido es "Delgado", el nombre "Juan", de 35 años y
+// dueño de un carro. El nuevo "user" debe agregarse a la lista de "users" de este
 // "company" y tener un "id" generado automáticamente. La función también debe modificar
 // el atributo "usersLength" de "company".
 
@@ -37,8 +37,8 @@ console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function');
 // en el atributo "users".
 
 // Parte 6: Crear una función tomando como parámetro un "id" de "company" y un
-// "id" de "user". La función debe eliminar este "user" de la lista de "users"
-// de "company" y cambie el atributo "usersLength" de "company".
+// "id" de "user". La función debe quitar este "user" de la lista de "users"
+// de "company" y cambiar el atributo "usersLength" de "company".
 
 // Parte 7: Crear una función tomando como parámetro un "id" de "company" y un
 // "id" de "user" que permite hacer un PATCH (como con una llamada HTTP) en este
@@ -49,8 +49,8 @@ console.log('---- EXAMPLE 7 part 9 --- ', 'Put here your function');
 // "user".
 
 // Parte 9: Crear una función tomando como parámetro dos "id" de "company" y
-// un "id" de "user". La función debe permitir que el user sea transferido como parámetro
-// de la primera "company" a la segunda "company". El atributo "usersLength" de cada
+// un "id" de "user". La función debe permitir que el user sea transferido de la
+// primera "company" a la segunda "company". El atributo "usersLength" de cada
 // "company" debe actualizarse.
 
 // -----------------------------------------------------------------------------
