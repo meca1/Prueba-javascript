@@ -7,7 +7,7 @@ console.log('---- EXAMPLE 1 --- ', restructureData(companies));
 function restructureData(data) {
   return data.map((company) => {
     return {
-      name: company.name,
+      name: company.name[0].toUpperCase() + company.name.substr(1),
       users: company.users,
       isOpen: company.isOpen,
       usersLength: company.usersLength,
