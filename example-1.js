@@ -8,12 +8,22 @@ function restructureData(data) {
   return data.map((company) => {
     return {
       name: company.name[0].toUpperCase() + company.name.substr(1),
-      users: company.users,
+      users: company.users.map((user) => userMapper(user)),
       isOpen: company.isOpen,
       usersLength: company.usersLength,
       id: company.id,
     };
   });
+}
+
+function userMapper(userObj) {
+  return {
+    firstName: userObj.firstName ? userObj.firstName : '',
+    lastName: userObj.lastName ? userObj.lastName : '',
+    age: userObj.age ? userObj.age : '',
+    car: userObj.car ? userObj.car : '',
+    id: userObj.id ? userObj.id : '',
+  };
 }
 
 // -----------------------------------------------------------------------------
