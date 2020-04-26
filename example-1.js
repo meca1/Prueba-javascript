@@ -5,7 +5,7 @@ cleanConsole(1, companies);
 console.log('---- EXAMPLE 1 --- ', restructureData(companies));
 
 function restructureData(data) {
-  return data.map((company) => {
+  return data.sort(sortByNumberOfUsers).map((company) => {
     return {
       name: company.name.charAt(0).toUpperCase() + company.name.slice(1),
       users: company.users.map((user) => userMapper(user)),
@@ -24,6 +24,18 @@ function userMapper(userObj) {
     car: userObj.car ? userObj.car : '',
     id: userObj.id ? userObj.id : '',
   };
+}
+
+/**
+ * Sort the companies in decreasing order by number of users.
+ * @param {*} a
+ * @param {*} b
+ * @return {Array} the companies in decreasing order.
+ */
+function sortByNumberOfUsers(a, b) {
+  if (a.users > b.users) return -1;
+  if (a.users < b.users) return 1;
+  return 0;
 }
 
 // -----------------------------------------------------------------------------
