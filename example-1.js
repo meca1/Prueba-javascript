@@ -8,7 +8,7 @@ function restructureData(data) {
   return data.sort(sortByNumberOfUsers).map((company) => {
     return {
       name: company.name.charAt(0).toUpperCase() + company.name.slice(1),
-      users: company.users.map((user) => userMapper(user)),
+      users: company.users.map(userMapper).sort(alphabeticalOrder),
       isOpen: company.isOpen,
       usersLength: company.usersLength,
       id: company.id,
@@ -35,6 +35,18 @@ function userMapper(userObj) {
 function sortByNumberOfUsers(a, b) {
   if (a.users > b.users) return -1;
   if (a.users < b.users) return 1;
+  return 0;
+}
+
+/**
+ * liste the users in alphabetical order.
+ * @param {*} a
+ * @param {*} b
+ * @return {Array} users in alphabetical order.
+ */
+function alphabeticalOrder(a, b) {
+  if (a.firstName < b.firstName) return -1;
+  if (a.firstName > b.firstName) return 1;
   return 0;
 }
 
