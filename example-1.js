@@ -2,7 +2,19 @@ import {createAll, cleanConsole} from './data';
 const companies = createAll();
 
 cleanConsole(1, companies);
-console.log('---- EXAMPLE 1 --- ', 'Put here your function');
+console.log('---- EXAMPLE 1 --- ', restructureData(companies));
+
+function restructureData(data) {
+  return data.map((company) => {
+    return {
+      name: company.name,
+      users: company.users,
+      isOpen: company.isOpen,
+      usersLength: company.usersLength,
+      id: company.id,
+    };
+  });
+}
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
