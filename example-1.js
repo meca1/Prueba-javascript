@@ -7,7 +7,7 @@ console.log('---- EXAMPLE 1 --- ', restructureData(companies));
 function restructureData(data) {
   return data.map((company) => {
     return {
-      name: company.name[0].toUpperCase() + company.name.substr(1),
+      name: company.name.charAt(0).toUpperCase() + company.name.slice(1),
       users: company.users.map((user) => userMapper(user)),
       isOpen: company.isOpen,
       usersLength: company.usersLength,
@@ -18,8 +18,8 @@ function restructureData(data) {
 
 function userMapper(userObj) {
   return {
-    firstName: userObj.firstName ? userObj.firstName : '',
-    lastName: userObj.lastName ? userObj.lastName : '',
+    firstName: userObj.firstName ? userObj.firstName.charAt(0).toUpperCase() + userObj.firstName.slice(1): '',
+    lastName: userObj.lastName ? userObj.lastName.charAt(0).toUpperCase() + userObj.lastName.slice(1) : '',
     age: userObj.age ? userObj.age : '',
     car: userObj.car ? userObj.car : '',
     id: userObj.id ? userObj.id : '',
