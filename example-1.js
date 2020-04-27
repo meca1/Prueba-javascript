@@ -5,7 +5,7 @@ cleanConsole(1, companies);
 console.log('---- EXAMPLE 1 --- ', restructureData(companies));
 
 export function restructureData(companies) {
-  return data.sort(sortByNumberOfUsers).map((company) => {
+  return companies.sort(sortByNumberOfUsers).map((company) => {
     return {
       ...company,
       name: capitalize(company.name),
