@@ -8,7 +8,7 @@ export function restructureData(companies) {
   return data.sort(sortByNumberOfUsers).map((company) => {
     return {
       ...company,
-      name: company.name.charAt(0).toUpperCase() + company.name.slice(1),
+      name: capitalize(company.name),
       users: company.users.map(userMapper).sort(alphabeticalOrder),
     };
   });
@@ -16,8 +16,8 @@ export function restructureData(companies) {
 
 function userMapper(userObj) {
   return {
-    firstName: userObj.firstName ? userObj.firstName.charAt(0).toUpperCase() + userObj.firstName.slice(1): '',
-    lastName: userObj.lastName ? userObj.lastName.charAt(0).toUpperCase() + userObj.lastName.slice(1) : '',
+    firstName: capitalize(userObj.firstName),
+    lastName: capitalize(userObj.lastName),
     age: userObj.age ? userObj.age : '',
     car: userObj.car ? userObj.car : '',
     id: userObj.id ? userObj.id : '',
@@ -47,6 +47,20 @@ function alphabeticalOrder(a, b) {
   if (a.firstName > b.firstName) return 1;
   return 0;
 }
+
+/**
+ * Capitalizes first letters of words in string.
+ * @param {*} str String to be modified
+ * @return {string}
+ * @usage
+ *   capitalize('fix this string'); => 'Fix This String'
+ *   capitalize('javaSCrIPT'); => 'JavaSCrIPT'
+ *   capitalize('javaSCrIPT', true); => 'Javascript'
+ */
+export function capitalize(str) {
+  if (typeof str !== 'string') return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
