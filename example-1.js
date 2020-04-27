@@ -4,7 +4,7 @@ const companies = createAll();
 cleanConsole(1, companies);
 console.log('---- EXAMPLE 1 --- ', restructureData(companies));
 
-function restructureData(data) {
+export function restructureData(companies) {
   return data.sort(sortByNumberOfUsers).map((company) => {
     return {
       ...company,
