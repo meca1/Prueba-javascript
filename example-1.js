@@ -7,11 +7,9 @@ console.log('---- EXAMPLE 1 --- ', restructureData(companies));
 function restructureData(data) {
   return data.sort(sortByNumberOfUsers).map((company) => {
     return {
+      ...company,
       name: company.name.charAt(0).toUpperCase() + company.name.slice(1),
       users: company.users.map(userMapper).sort(alphabeticalOrder),
-      isOpen: company.isOpen,
-      usersLength: company.usersLength,
-      id: company.id,
     };
   });
 }
