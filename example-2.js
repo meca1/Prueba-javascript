@@ -2,7 +2,23 @@ import {cleanConsole, createAll} from './data';
 const companies = createAll();
 
 cleanConsole(2, companies);
-console.log('---- EXAMPLE 2 --- ', 'Put here your function');
+console.log('---- EXAMPLE 2 --- ', filterUsers(companies, true));
+
+/**
+ * Filter users in companies whose value is equal to "hasCar"
+ * @param {Array} companies
+ * @param {Boolean} hasCar
+ * @return {Array} companies with filtered users
+ */
+function filterUsers(companies, hasCar) {
+  return companies.map((company) => {
+    return {
+      ...company,
+      users: company.users.filter((user) => user.car === hasCar),
+      usersLength: company.users.filter((user) => user.car === hasCar).length,
+    };
+  });
+}
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
