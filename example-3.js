@@ -1,9 +1,22 @@
 import {cleanConsole, createAll} from './data';
+import {restructureData} from './example-1';
 
 const companies = createAll();
 
 cleanConsole(3, companies);
-console.log('---- EXAMPLE 3 --- ', 'Put here your function');
+console.log('---- EXAMPLE 3 --- ', validatingOfNameInCapitalize(companies));
+
+/**
+ * Validating that all the names of the companies and the attributes "firstName"
+ * and "lastName" of "users" are capitalized.
+ * @param {Array} companies
+ * @return {Boolean}.
+ */
+function validatingOfNameInCapitalize(companies) {
+  const companiesTest = restructureData(companies);
+  if (companiesTest === companies) return true;
+  return false;
+}
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
