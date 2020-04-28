@@ -10,7 +10,7 @@ console.log('---- EXAMPLE 2 --- ', filterUsers(companies, true));
  * @param {Boolean} hasCar
  * @return {Array} companies with filtered users
  */
-function filterUsers(companies, hasCar) {
+export function filterUsers(companies, hasCar) {
   return companies.map((company) => {
     return {
       ...company,
