@@ -1,5 +1,6 @@
 import {cleanConsole, createAll} from './data';
 import {allUsers} from './example-4';
+import {filterUsers} from './example-2';
 const companies = createAll();
 
 cleanConsole(5, companies);
