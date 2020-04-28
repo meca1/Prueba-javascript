@@ -14,7 +14,11 @@ function allUsers(companies) {
       });
     }),
   );
-  return users;
+  return users.sort(sortByAge);
+}
+
+function sortByAge(a, b) {
+  return b.age - a.age;
 }
 
 // -----------------------------------------------------------------------------
