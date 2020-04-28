@@ -22,6 +22,8 @@ function reportOfUser(companies) {
     return {
       size: usersArray.length,
       average: averageAgeOfUsers(usersArray),
+      hasCar: allUsers(filterUsers(companies, true)).length,
+      averageWithCar: averageAgeOfUsers(allUsers(filterUsers(companies, true))),
     };
   });
 }
