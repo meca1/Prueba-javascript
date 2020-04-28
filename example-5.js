@@ -1,8 +1,42 @@
 import {cleanConsole, createAll} from './data';
+import {allUsers} from './example-4';
 const companies = createAll();
 
 cleanConsole(5, companies);
-console.log('---- EXAMPLE 5 --- ', 'Put here your function');
+console.log('---- EXAMPLE 5 --- ', reportOfUser(companies));
+
+/**
+ * returnZa new object with the following attributes:
+ *    'size' => number of "users"
+ *    'average' => average age of "users"
+ *    'hasCar' => number of "users" owning a car
+ *    'averageWithCar' => average age of users with a car
+ *
+ * @param {Array} companies
+ * @return {Object} Object
+ */
+function reportOfUser(companies) {
+  const usersArray = allUsers(companies);
+  return usersArray.reduce((user) => {
+    return {
+      size: usersArray.length,
+      average: averageAgeOfUsers(usersArray),
+    };
+  });
+}
+
+/**
+ * Average age of "users"
+ * @param {Array} usersArray
+ * @return {Number} Number
+ */
+function averageAgeOfUsers(usersArray) {
+  return Math.round(
+      usersArray
+          .map((user) => user.age)
+          .reduce((a, b) => a + b) / usersArray.length,
+  );
+}
 
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
