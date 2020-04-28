@@ -4,7 +4,7 @@ const companies = createAll();
 cleanConsole(4, companies);
 console.log('---- EXAMPLE 4 --- ', allUsers(companies));
 
-function allUsers(companies) {
+export function allUsers(companies) {
   const users = [];
   companies.map((company) =>
     company.users.map((user) => {
