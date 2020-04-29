@@ -1,6 +1,5 @@
 import {cleanConsole, createAll} from './data';
-import {restructureData} from './example-1';
-
+import {restructureData, capitalize} from './example-1';
 const companies = createAll();
 
 cleanConsole(3, companies);
@@ -13,11 +12,20 @@ console.log('---- EXAMPLE 3 --- ', validatingOfNameInCapitalize(companies));
  * @return {Boolean}.
  */
 function validatingOfNameInCapitalize(companies) {
-  const companiesTest = restructureData(companies);
-  if (companiesTest === companies) return true;
-  return false;
+  return restructureData(companies).every((company) => {
+    return (
+      isCapitalize(company.name) && company.users.every(nameOfUserIsCapitalize)
+    );
+  });
 }
 
+function isCapitalize(str) {
+  return str === capitalize(str);
+}
+
+function nameOfUserIsCapitalize(user) {
+  return isCapitalize(user.firstName) && isCapitalize(user.lastName);
+}
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 
