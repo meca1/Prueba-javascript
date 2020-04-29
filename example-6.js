@@ -1,10 +1,25 @@
 import {cleanConsole, createAll} from './data';
+import {allUsers} from './example-4';
+import {capitalize} from './example-1';
 
 const companies = createAll();
 
 cleanConsole(6, companies);
-console.log('---- EXAMPLE 6 --- ', 'Put here your function');
+console.log('---- EXAMPLE 6 --- ', restructureData(companies));
 
+/**
+ * Return a new object of users
+ * @param {Array} companies
+ * @return {Object} Object { lastName + firstName + age : car }
+ */
+function restructureData(companies) {
+  const users = {};
+  allUsers(companies).forEach((user) => {
+    const atributeName = `${capitalize(user.lastName)}${capitalize(user.firstName)}${user.age}`;
+    users[atributeName] = user.car;
+  });
+  return users;
+}
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 
