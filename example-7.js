@@ -4,7 +4,7 @@ const companies = createAll();
 
 cleanConsole(7, companies);
 console.log('---- EXAMPLE 7 part 1 --- ', getCompanyById(6));
-console.log('---- EXAMPLE 7 part 2 --- ', 'Put here your function');
+console.log('---- EXAMPLE 7 part 2 --- ', deleteCompanyByID(6));
 console.log('---- EXAMPLE 7 part 3 --- ', 'Put here your function');
 console.log('---- EXAMPLE 7 part 4 --- ', 'Put here your function');
 console.log('---- EXAMPLE 7 part 5 --- ', 'Put here your function');
@@ -25,6 +25,18 @@ function getCompanyById(companyId) {
       .join('');
 }
 
+/**
+ * Delete compnay by the ID
+ * @param {ID} companyId
+ * @return {Array} companies with the company deleted
+ */
+function deleteCompanyByID(companyId) {
+  const companiesCopy = companies.map((company) => company);
+  const company = companies.find((company) => company.id === companyId);
+  const companyIndex = companies.indexOf(company);
+  companiesCopy.splice(companyIndex, 1);
+  return companiesCopy;
+}
 // -----------------------------------------------------------------------------
 // INSTRUCCIONES EN ESPAÑOL
 
